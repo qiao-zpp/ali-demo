@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+			font-family:"微软雅黑";
+		}
+		img{
+			display:block;
+		}
+		.box{
+			width:1200px;
+			height:372px;
+			margin:50px auto;
+			border:1px solid #ccc;
+		}
+		.same{
+			width:20%;
+			height:100%;
+			/*background-color:lightsalmon;*/
+			float: left;
+			border-right:1px solid #ccc;
+			box-sizing: border-box;
+			overflow:hidden; 
+			transition: all 0.3s;
+			-webkit-transition: all 0.3s;
+			-ms-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+		}
+		.same:last-child{
+			border-right:none;
+		}
+		.inner{
+			width:100%;
+			height:100%;
+			position: relative;
+			text-align: center;
+		}
+		.inner>div{
+			position:absolute; 
+			top:0;
+			box-sizing: border-box;
+		}
+		.current{
+			width:40%;
+			height:100%;
+			border-left:2px solid #00A2CA;
+			border-right:2px solid #00A2CA;
+		}
+		.current.same:last-child{
+			border-right:2px solid #00A2CA;
+		}
+		.before{
+			left:0;
+			padding-top:76px;
+			width:100%;
+		}
+		.before h3{
+			font:500 16px/25px "微软雅黑";
+		}
+		.current .before{
+			left:-100%;
+		}
+		.current .after{
+			left:0;
+		}
+		.before .txt{
+			font:12px/22px "微软雅黑";
+			color:#333;
+			margin-bottom:65px;
+		}
+		.before img{
+			margin:0 auto;
+		}
+		.after{
+			left:100%;
+			width:480px;
+			white-space:nowrap;
+		}
+		.after h3{
+			font:14px/64px "微软雅黑";
+			color:#999;
+		}
+		.top-product{
+			border-bottom:1px solid #ccc;
+			height:155px;
+			overflow: hidden;
+		}
+		.product-icon{
+			height:64px;
+			width:64px;
+			float:left;
+			background: url(images/product-icons.png) no-repeat -640px 0;
+			margin:1px 16px 0 39px;
+		}
+		.details{
+			float:left;
+			text-align: left;
+		}
+		.details h4{
+			margin-top: 5px;
+			font:14px/18px "微软雅黑";
+		}
+		.details p{
+			font:12px/32px "微软雅黑";
+			color:#999;
+		}
+		.details p span{
+			font-size:18px;
+			font-family:"微软雅黑";
+			color:#f60;
+		}
+		.buy{
+			display:inline-block;
+			line-height:36px;
+			height:34px;
+			border: 1px solid #00A2CA;
+			color:#00A2CA;
+			background-color:#fff;
+			font-family:"微软雅黑";
+			font-size:14px;
+			padding:0 30px;
+			text-decoration:none;
+			margin-top:18px;
+		}
+		.buy:hover{
+			background-color:#00a2ca;
+			color:#fff;
+		}
+		.bottom-product li{
+			padding-top:16px;
+			height:54px;
+		}
+		.inner-icon{
+			height:32px;
+			width:32px;
+			background: url(images/product-icons.png) no-repeat -800px -928px;
+			float:left;
+			margin:1px 12px 0 22px;
+		}
+		.inner-txt{
+			float:left;
+			text-align: left;
+			font-size:12px;
+		}
+		.inner-txt h5{
+			line-height:20px;
+		}
+		.inner-txt p{
+			line-height:18px;
+			color:#999;
+		}
+		.inner-txt a{
+			line-height:18px;
+			color:#00A2CA;
+			text-decoration:none;
+		}
+		.inner-txt a:hover{
+			text-decoration:underline;
+		}
+	</style>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/index.js"></script>
+</head>
+<body>
+	<ul class="box">
+		<li class="one current same">
+			<div class="inner">
+				<div class="before">
+					<h3>弹性计算</h3>
+					<p class="txt">高可用，高性能，可弹性伸缩的计算服务</p>
+					<p>
+						<img src="images/1.png" height="135" width="113" alt="">
+					</p>
+				</div>
+				<div class="after">
+					<h3>弹性计算</h3>
+					<div class="top-product">
+						<div class="product-icon"></div>
+						<div class="details">
+							<h4>云服务器ECS</h4>
+							<p>可弹性伸缩、安全稳定、简单易用的计算服务</p>
+							<p>包年包月<span>28.8</span>元/月起&nbsp;按量付费<span>0.25</span>元/小时起</p>
+							<a class="buy" href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="bottom-product">
+						<ul>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="two same">
+			<div class="inner">
+				<div class="before">
+					<h3>弹性计算</h3>
+					<p class="txt">高可用，高性能，可弹性伸缩的计算服务</p>
+					<p>
+						<img src="images/1.png" height="135" width="113" alt="">
+					</p>
+				</div>
+				<div class="after">
+					<div class="after">
+					<h3>弹性计算</h3>
+					<div class="top-product">
+						<div class="product-icon"></div>
+						<div class="details">
+							<h4>云服务器ECS</h4>
+							<p>可弹性伸缩、安全稳定、简单易用的计算服务</p>
+							<p>包年包月<span>28.8</span>元/月起&nbsp;按量付费<span>0.25</span>元/小时起</p>
+							<a class="buy" href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="bottom-product">
+						<ul>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+			</div>
+		</li>
+		<li class="three same">
+			<div class="inner">
+				<div class="before">
+					<h3>弹性计算</h3>
+					<p class="txt">高可用，高性能，可弹性伸缩的计算服务</p>
+					<p>
+						<img src="images/1.png" height="135" width="113" alt="">
+					</p>
+				</div>
+				<div class="after">
+					<div class="after">
+					<h3>弹性计算</h3>
+					<div class="top-product">
+						<div class="product-icon"></div>
+						<div class="details">
+							<h4>云服务器ECS</h4>
+							<p>可弹性伸缩、安全稳定、简单易用的计算服务</p>
+							<p>包年包月<span>28.8</span>元/月起&nbsp;按量付费<span>0.25</span>元/小时起</p>
+							<a class="buy" href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="bottom-product">
+						<ul>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+			</div>
+		</li>
+		<li class="four same">
+			<div class="inner">
+				<div class="before">
+					<h3>弹性计算</h3>
+					<p class="txt">高可用，高性能，可弹性伸缩的计算服务</p>
+					<p>
+						<img src="images/1.png" height="135" width="113" alt="">
+					</p>
+				</div>
+				<div class="after">
+					<div class="after">
+					<h3>弹性计算</h3>
+					<div class="top-product">
+						<div class="product-icon"></div>
+						<div class="details">
+							<h4>云服务器ECS</h4>
+							<p>可弹性伸缩、安全稳定、简单易用的计算服务</p>
+							<p>包年包月<span>28.8</span>元/月起&nbsp;按量付费<span>0.25</span>元/小时起</p>
+							<a class="buy" href="#">立即购买</a>
+						</div>
+					</div>
+					<div class="bottom-product">
+						<ul>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+							<li>
+								<div class="inner-icon"></div>
+								<div class="inner-txt">
+									<h5>云引擎 ACE</h5>
+									<p>弹性的应用托管环境20元/月起</p>
+									<a href="#">立即购买</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>
